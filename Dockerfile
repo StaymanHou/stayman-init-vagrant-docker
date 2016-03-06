@@ -45,6 +45,9 @@ RUN mkdir -p /etc/sudoers.d
 RUN install -b -m 0440 /dev/null /etc/sudoers.d/vagrant
 RUN echo 'vagrant ALL=NOPASSWD: ALL' >> /etc/sudoers.d/vagrant
 
+# Install rmagic
+apt-get install -y imagemagick libmagickwand-dev
+
 # Install rvm & ruby
 RUN su vagrant -c "gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3" 
 RUN su vagrant -c "curl -sSL https://get.rvm.io | bash -s stable --ruby" 
