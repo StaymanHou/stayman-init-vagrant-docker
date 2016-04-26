@@ -46,6 +46,7 @@ RUN install -b -m 0440 /dev/null /etc/sudoers.d/vagrant
 RUN echo 'vagrant ALL=NOPASSWD: ALL' >> /etc/sudoers.d/vagrant
 
 # Install rmagic
+RUN apt-get update
 RUN apt-get install -y imagemagick libmagickwand-dev
 
 # Install rvm & ruby
